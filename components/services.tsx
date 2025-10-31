@@ -104,7 +104,7 @@ export default function Services() {
                         transition={{ delay: 0.03 * j, duration: 0.2 }}
                         className="text-sm text-primary-yellow flex items-center gap-2"
                       >
-                        <span className="w-1 h-1 bg-primary-yellow rounded-full" />
+                        <Check className="w-4 h-4 flex-shrink-0" />
                         {feature}
                       </motion.li>
                     ))}
