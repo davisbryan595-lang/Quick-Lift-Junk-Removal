@@ -2,19 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import Link from "next/link"
+import Image from "next/image"
 
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
-]
-
-export default function Navbar() {
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,46 +16,52 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  return (
-    <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.3 }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-primary-yellow/20 shadow-lg shadow-primary-yellow/10"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo - NO BORDER, NO FILL */}
-          <Link href="#home" className="flex items-center gap-2 group" aria-label="Home">
-            <motion.div
-              whileHover={{ scale: 1.06 }}
-              className="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center transition-all duration-300"
-            >
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F17ff38e3ca444c7a966105fa5172e797?format=webp&width=800"
-                alt="Quick Lift logo"
-                className="w-full h-full object-contain"
-              />
-            </motion.div>
-          </Link>
+  const navItems = [
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Testimonials", href: "#testimonials" },
+  ]
 
-          {/* Desktop Nav */}
+  return (
+    <>
+      <motion.nav
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled ? "bg-background/80 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
+        }`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FullLogo%2B%285%29.png-1Hk6AD4hfFIQSSljhIL8uvTgfXljPy.webp"
+              alt="Quick Lift"
+              width={120}
+              height={40}
+            />
+          </motion.div>
+
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, i) => (
               <motion.a
                 key={item.href}
                 href={item.href}
+                className="text-foreground hover:text-primary transition-colors relative group"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 * i, duration: 0.3 }}
-                className="nav-link text-foreground/70 hover:text-primary-yellow transition-colors relative group text-sm font-medium"
+                transition={{ delay: i * 0.1 }}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-yellow to-transparent group-hover:w-full transition-all duration-300" />
+                <motion.div
+                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary to-accent"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3 }}
+                />
               </motion.a>
             ))}
           </div>
@@ -72,56 +70,54 @@ export default function Navbar() {
           <motion.a
             href="tel:(240)500-0946"
             whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="hidden md:flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-sm hover:shadow-lg hover:shadow-primary-yellow/50 transition-all duration-300"
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:block px-6 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-background font-bold hover:shadow-lg hover:shadow-primary/50 transition-all"
           >
             Call Now
           </motion.a>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden w-10 h-10 flex items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
-            <div className="space-y-1.5">
-              <motion.div
-                animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                className="w-5 h-0.5 bg-primary-yellow"
-              />
-              <motion.div animate={isOpen ? { opacity: 0 } : { opacity: 1 }} className="w-5 h-0.5 bg-primary-yellow" />
-              <motion.div
-                animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                className="w-5 h-0.5 bg-primary-yellow"
-              />
-            </div>
+          <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
           </button>
         </div>
+      </motion.nav>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            className="md:hidden border-t border-primary-yellow/20 bg-primary-black/95 backdrop-blur-md"
+      {/* Mobile Menu */}
+      <motion.div
+        className={`fixed inset-0 z-30 bg-background/95 backdrop-blur-md md:hidden ${menuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: menuOpen ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+        style={{ marginTop: "64px" }}
+      >
+        <div className="flex flex-col gap-4 p-6">
+          {navItems.map((item, i) => (
+            <motion.a
+              key={item.href}
+              href={item.href}
+              className="text-xl font-semibold text-foreground"
+              initial={{ x: -20, opacity: 0 }}
+              animate={menuOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+              transition={{ delay: i * 0.1 }}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </motion.a>
+          ))}
+          <motion.a
+            href="tel:(240)500-0946"
+            className="px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-background font-bold text-center"
+            initial={{ x: -20, opacity: 0 }}
+            animate={menuOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+            transition={{ delay: 0.4 }}
           >
-            <div className="px-4 py-4 space-y-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="nav-link block px-4 py-2 text-foreground/70 hover:text-primary-yellow transition-colors text-sm font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <a
-                href="tel:(240)500-0946"
-                className="nav-link block px-4 py-2 mt-4 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-center text-sm"
-              >
-                Call Now
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </motion.nav>
+            Call Now
+          </motion.a>
+        </div>
+      </motion.div>
+    </>
   )
 }
