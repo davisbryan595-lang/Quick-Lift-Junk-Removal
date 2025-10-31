@@ -60,7 +60,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 * i, duration: 0.3 }}
-                className="text-foreground/70 hover:text-primary-yellow transition-colors relative group text-sm font-medium"
+                className="nav-link text-foreground/70 hover:text-primary-yellow transition-colors relative group text-sm font-medium"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-yellow to-transparent group-hover:w-full transition-all duration-300" />
