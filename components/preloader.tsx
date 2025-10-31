@@ -1,75 +1,98 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion, useAnimation } from "framer-motion"
+import { motion } from "framer-motion"
+import Image from "next/image"
 
-export default function Preloader({ duration = 2500 }: { duration?: number }) {
-  const [progress, setProgress] = useState(0)
-  const controls = useAnimation()
-
-  // ── Progress counter (same as before) ─────────────────────────────────────
-  useEffect(() => {
-    let start: number | null = null
-    const step = (timestamp: number) => {
-      if (!start) start = timestamp
-      const elapsed = timestamp - start
-      const pct = Math.min(100, Math.round((elapsed / duration) * 100))
-      setProgress(pct)
-      if (elapsed < duration) requestAnimationFrame(step)
-    }
-    const raf = requestAnimationFrame(step)
-    return () => cancelAnimationFrame(raf)
-  }, [duration])
-
-  // ── Fade-out when finished ───────────────────────────────────────────────
-  useEffect(() => {
-    if (progress >= 100) {
-      controls.start({
-        opacity: 0,
-        scale: 0.98,
-        transition: { duration: 0.6, ease: "easeOut" },
-      })
-    }
-  }, [progress, controls])
-
+export function Preloader() {
   return (
     <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-background"
       initial={{ opacity: 1 }}
-      animate={controls}
-      className="fixed inset-0 bg-gradient-to-br from-[#050505] via-[#0b0b0b] to-[#050505] flex items-center justify-center z-50"
-      role="status"
-      aria-live="polite"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      <div className="flex flex-col items-center gap-6 px-6">
-        {/* ── Spinning logo ── */}
-        <motion.img
-          src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F07ca97242bc2430e81a2d57a4fdb367c?format=webp&width=600"
-          alt="Quick Lift logo"
-          width={160}
-          height={160}
-          className="w-28 h-28 md:w-40 md:h-40 object-contain"
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-primary"
+          animate={{
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Number.POSITIVE_INFINITY,
+          }}
         />
+      </div>
 
-        {/* ── Liquid-fill progress bar ── */}
-        <div className="relative w-64 md:w-96 h-4 bg-neutral-800 rounded-full overflow-hidden">
-          {/* Track (dark) */}
-          <div className="absolute inset-0 rounded-full bg-neutral-800" />
-
-          {/* Animated fill – same gradient as buttons */}
-          <motion.div
-            className="absolute inset-y-0 left-0 h-full rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold gradient-shift glow-pulse"
-            initial={{ width: 0 }}
-            animate={{ width: `${progress}%` }}
-            transition={{ ease: "linear", duration: 0.2 }}
+      {/* Logo with 3D rotation and glow */}
+      <motion.div
+        className="relative z-10"
+        animate={{
+          rotateY: [0, 360],
+          scale: [1, 1.05, 1],
+        }}
+        transition={{
+          duration: 2.5,
+          ease: "easeInOut",
+        }}
+        style={{
+          perspective: 1000,
+        }}
+      >
+        <motion.div
+          className="relative w-32 h-32 flex items-center justify-center"
+          animate={{
+            boxShadow: [
+              "0 0 20px rgba(255, 205, 0, 0.3)",
+              "0 0 60px rgba(255, 205, 0, 0.8)",
+              "0 0 20px rgba(255, 205, 0, 0.3)",
+            ],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Number.POSITIVE_INFINITY,
+          }}
+        >
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FullLogo%2B%285%29.png-1Hk6AD4hfFIQSSljhIL8uvTgfXljPy.webp"
+            alt="Quick Lift Logo"
+            width={128}
+            height={128}
+            className="drop-shadow-2xl"
           />
-        </div>
+        </motion.div>
+      </motion.div>
 
-        {/* ── Percentage text ── */}
-        <p className="text-sm text-foreground/60">
-          Loading Quick Lift… <span className="font-semibold">{progress}%</span>
-        </p>
+      {/* Particle burst effect */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-primary rounded-full"
+            initial={{
+              x: 0,
+              y: 0,
+              opacity: 1,
+            }}
+            animate={{
+              x: Math.cos((i / 8) * Math.PI * 2) * 100,
+              y: Math.sin((i / 8) * Math.PI * 2) * 100,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 1.5,
+              delay: 1,
+              ease: "easeOut",
+            }}
+            style={{
+              left: "50%",
+              top: "50%",
+              translateX: "-50%",
+              translateY: "-50%",
+            }}
+          />
+        ))}
       </div>
     </motion.div>
   )
