@@ -58,7 +58,7 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight">
-              <span className="text-white">Fast & Affordable</span>
+              <span className="text-foreground">Fast & Affordable</span>
               <br />
               <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse">
                 Junk Removal
