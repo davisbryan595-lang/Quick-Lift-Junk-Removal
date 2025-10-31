@@ -3,8 +3,11 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, Archivo } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
+import dynamic from "next/dynamic"
 import "../styles/globals.css"
 import "./globals.css"
+
+const BackgroundParticles = dynamic(() => import("@/components/background-particles"), { ssr: false })
 
 const _archivo = Archivo({ subsets: ["latin"], weight: ["400", "700", "900"] })
 const _geist = Geist({ subsets: ["latin"] })
