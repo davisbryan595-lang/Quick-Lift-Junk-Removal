@@ -8,7 +8,7 @@ const servicesData = [
   {
     id: "residential",
     title: "Residential Junk Removal",
-    icon: "🏠",
+    icon: "Home",
     description: "Clear out your home of unwanted items quickly and affordably",
     features: [
       "Basement & attic cleanouts",
@@ -21,7 +21,7 @@ const servicesData = [
   {
     id: "commercial",
     title: "Commercial Hauling",
-    icon: "🏢",
+    icon: "Building",
     description: "Professional junk removal for businesses and properties",
     features: [
       "Office furniture removal",
@@ -34,7 +34,7 @@ const servicesData = [
   {
     id: "hauling",
     title: "Premium Hauling",
-    icon: "🚚",
+    icon: "Truck",
     description: "Heavy-duty hauling for any project, large or small",
     features: [
       "Bulk item removal",
@@ -62,7 +62,13 @@ export default function Services() {
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
+            <span
+              className="inline-block bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse"
+              style={{
+                backgroundSize: "200%",
+                animation: "gradient-shift 4s ease infinite",
+              }}
+            >
               Services
             </span>
           </h2>
@@ -117,7 +123,7 @@ export default function Services() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-sm hover:shadow-lg hover:shadow-primary-yellow/50 transition-all duration-300 group-hover:scale-105"
                   >
                     Get Quote
-                    <span>→</span>
+                    <span>Right Arrow</span>
                   </motion.a>
                 </div>
 

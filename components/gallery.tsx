@@ -70,9 +70,15 @@ export default function Gallery() {
           className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
-            Before &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
-              After
+            Before {" "}
+            <span
+              className="inline-block bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse"
+              style={{
+                backgroundSize: "200%",
+                animation: "gradient-shift 4s ease infinite",
+              }}
+            >
+             & After
             </span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
@@ -102,12 +108,19 @@ export default function Gallery() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 to-accent-blue/10" />
 
                 {/* Image */}
-                <img src={item.src} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <h3 className="text-white font-bold">{item.title}</h3>
-                  <p className="text-primary-yellow text-sm">{item.before ? "Cluttered Space" : "Clean & Clear"}</p>
+                  <p className="text-primary-yellow text-sm">
+                    {item.before ? "Cluttered Space" : "Clean & Clear"}
+                  </p>
                 </div>
 
                 {/* Glow effect on hover */}
@@ -142,7 +155,7 @@ export default function Gallery() {
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-lg hover:shadow-2xl hover:shadow-primary-yellow/50 transition-all duration-300"
           >
             Schedule Your Removal Today
-            <span>→</span>
+            <span>Right Arrow</span>
           </motion.a>
         </motion.div>
       </div>

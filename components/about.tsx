@@ -41,7 +41,13 @@ export default function About() {
           >
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
               Why{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
+              <span
+                className="inline-block bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse"
+                style={{
+                  backgroundSize: "200%",
+                  animation: "gradient-shift 4s ease infinite",
+                }}
+              >
                 Choose Us
               </span>
             </h2>
@@ -68,8 +74,8 @@ export default function About() {
                   transition={{ delay: 0.1 * i }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-primary-black font-bold text-sm">✓</span>
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-1 glow-pulse">
+                    <span className="text-primary-black font-bold text-sm">Checkmark</span>
                   </div>
                   <p className="text-foreground/80">{item}</p>
                 </motion.div>

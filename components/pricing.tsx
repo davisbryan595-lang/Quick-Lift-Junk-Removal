@@ -7,7 +7,7 @@ const pricingTiers = [
   {
     name: "Standard Removal",
     description: "Perfect for small to medium cleanouts",
-    icon: "🚚",
+    icon: "Truck",
     features: [
       "Up to 1/2 truck load",
       "Same-day service available",
@@ -20,7 +20,7 @@ const pricingTiers = [
   {
     name: "Premium Service",
     description: "Ideal for larger projects",
-    icon: "⭐",
+    icon: "Star",
     features: [
       "Up to full truck load",
       "Priority scheduling",
@@ -35,7 +35,7 @@ const pricingTiers = [
   {
     name: "Commercial/Estate",
     description: "Large-scale removals",
-    icon: "🏢",
+    icon: "Building",
     features: [
       "Multiple truck loads",
       "Multi-day projects",
@@ -72,7 +72,13 @@ export default function Pricing() {
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             Transparent{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
+            <span
+              className="inline-block bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse"
+              style={{
+                backgroundSize: "200%",
+                animation: "gradient-shift 4s ease infinite",
+              }}
+            >
               Pricing
             </span>
           </h2>
@@ -112,7 +118,7 @@ export default function Pricing() {
                     transition={{ delay: 0.3 }}
                     className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black text-xs font-bold rounded-full"
                   >
-                    
+                    Most Popular
                   </motion.div>
                 )}
 
@@ -140,7 +146,7 @@ export default function Pricing() {
                       className="flex items-start gap-3 text-sm"
                     >
                       <span className="w-5 h-5 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-primary-black font-bold text-xs">✓</span>
+                        <span className="text-primary-black font-bold text-xs">Checkmark</span>
                       </span>
                       <span className="text-foreground/80">{feature}</span>
                     </motion.li>
@@ -182,7 +188,7 @@ export default function Pricing() {
             className="inline-flex items-center gap-2 text-primary-yellow font-bold hover:text-accent-gold transition-colors"
           >
             Call (240) 500-0946 for a free estimate
-            <span>→</span>
+            <span>Right Arrow</span>
           </motion.a>
         </motion.div>
       </div>
