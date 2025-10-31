@@ -126,10 +126,10 @@
 
 /* Theme enforcement: use logo-derived palette across site, avoid white sections */
 :root {
-  --logo-yellow: var(--primary, #FDD835);
-  --logo-gold: var(--accent-gold, #FFAA00);
-  --logo-blue: var(--accent-blue, #658FE2);
-  --theme-card-bg: linear-gradient(135deg, rgba(253,216,53,0.06), rgba(101,143,226,0.04));
+  --logo-yellow: var(--primary-yellow, #ffc008);
+  --logo-gold: var(--accent-gold, #ff9908);
+  --logo-blue: var(--accent-blue, #43b0d6);
+  --theme-card-bg: linear-gradient(135deg, rgba(255,192,8,0.06), rgba(67,176,214,0.04));
 }
 
 /* Replace any white backgrounds with themed dark cards */
