@@ -64,14 +64,14 @@ export default function Gallery() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
             Before {" "}
-            <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+            <span className="text-primary-yellow">
               & After
             </span>
           </h2>
@@ -90,7 +90,7 @@ export default function Gallery() {
           {galleryItems.map((item, i) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.08 * i, duration: 0.5 }}
               onClick={() => setSelectedId(item.id)}
@@ -136,7 +136,7 @@ export default function Gallery() {
 
         {/* Call to Action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5 }}
           className="mt-16 text-center"
