@@ -181,10 +181,7 @@ section, footer, header, nav, .container, .panel {
 
 /* Utility: gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, var(--logo-yellow), var(--logo-gold));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #000000;
 }
 
 /* Glow helper */

@@ -66,18 +66,18 @@ export default function Pricing() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
-            Transparent{" "}
-            <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-black mb-4">
+            <span className="text-foreground">Transparent</span>{" "}
+            <span className="text-primary-yellow">
               Pricing
             </span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/75 max-w-2xl mx-auto font-medium">
             No hidden fees. No surprises. Just honest, competitive pricing for your junk removal needs.
           </p>
         </motion.div>
@@ -87,7 +87,7 @@ export default function Pricing() {
           {pricingTiers.map((tier, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 * i, duration: 0.5, ease: "easeOut" }}
               whileHover={
@@ -120,8 +120,8 @@ export default function Pricing() {
                 {/* Icon & Title */}
                 <div className="mb-6">
                   <div className="text-4xl mb-3">{tier.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
-                  <p className="text-foreground/60 text-sm">{tier.description}</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">{tier.name}</h3>
+                  <p className="text-foreground/70 text-sm">{tier.description}</p>
                 </div>
 
                 {/* Price note */}
@@ -168,7 +168,7 @@ export default function Pricing() {
 
         {/* FAQ Note */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5 }}
           className="mt-16 p-8 rounded-2xl bg-primary-yellow/5 border border-primary-yellow/20 text-center"

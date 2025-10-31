@@ -56,18 +56,18 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 1, x: 0 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6">
-              Get Your Free{" "}
-              <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
-                QOUTE TODAY
+            <h2 className="text-5xl md:text-6xl font-black mb-6">
+              <span className="text-foreground">Get Your Free</span>{" "}
+              <span className="text-primary-yellow">
+                QUOTE TODAY
               </span>
             </h2>
 
-            <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
+            <p className="text-xl text-foreground/80 mb-8 leading-relaxed font-medium">
               Contact us for a free, no-obligation estimate. Our team is ready to help you declutter and transform your
               space.
             </p>
@@ -83,7 +83,7 @@ export default function Contact() {
                   <span className="text-primary-black font-bold text-lg">📞</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-1">Call Us</h3>
+                  <h3 className="font-bold text-foreground mb-1">Call Us</h3>
                   <p className="text-primary-yellow font-semibold text-lg">(240) 500-0946</p>
                   <p className="text-foreground/60 text-sm">Available 24/7</p>
                 </div>
@@ -99,7 +99,7 @@ export default function Contact() {
                   <span className="text-primary-black font-bold text-lg">✉️</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-1">Email</h3>
+                  <h3 className="font-bold text-foreground mb-1">Email</h3>
                   <p className="text-primary-yellow font-semibold">quickliftjunkremoval@gmail.com</p>
                   <p className="text-foreground/60 text-sm">We'll respond within 2 hours</p>
                 </div>
@@ -114,7 +114,7 @@ export default function Contact() {
                   <span className="text-primary-black font-bold text-lg">📍</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-white mb-1">Service Areas</h3>
+                  <h3 className="font-bold text-foreground mb-1">Service Areas</h3>
                   <p className="text-foreground/70 text-sm">MD, WV, PA & surrounding areas</p>
                   <p className="text-primary-yellow text-sm font-semibold mt-2">Same-day service available</p>
                 </div>
@@ -136,7 +136,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 1, x: 0 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >

@@ -56,18 +56,18 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
-            Our{" "}
-            <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-black mb-4">
+            <span className="text-foreground">Our</span>{" "}
+            <span className="text-primary-yellow">
                 Services
               </span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/75 max-w-2xl mx-auto font-medium">
             Comprehensive junk removal and hauling solutions for residential, commercial, and specialty projects
           </p>
         </motion.div>
@@ -77,7 +77,7 @@ export default function Services() {
           {servicesData.map((service, i) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 * i, duration: 0.5 }}
               onHoverStart={() => setExpandedService(service.id)}
@@ -141,12 +141,12 @@ export default function Services() {
 
         {/* Service Areas */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5 }}
           className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-primary-yellow/10 to-accent-blue/10 border border-primary-yellow/20"
         >
-          <h3 className="text-2xl font-bold text-white mb-6">Service Areas</h3>
+          <h3 className="text-2xl font-bold text-foreground mb-6">Service Areas</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
             {[
               "Hagerstown",

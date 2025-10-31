@@ -12,37 +12,37 @@ const galleryItems = [
     id: 1,
     title: "Residential Cleanout",
     before: true,
-    src: "/service3.jpg",
+    src: "https://images.pexels.com/photos/6195122/pexels-photo-6195122.jpeg",
   },
   {
     id: 2,
     title: "Basement Removal",
     before: false,
-    src: "/service1.jpg",
+    src: "https://images.pexels.com/photos/7475428/pexels-photo-7475428.jpeg",
   },
   {
     id: 3,
     title: "Furniture Hauling",
     before: true,
-    src: "/serr2.jpg",
+    src: "https://images.pexels.com/photos/27001161/pexels-photo-27001161.jpeg",
   },
   {
     id: 4,
     title: "Construction Cleanup",
     before: false,
-    src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.pexels.com/photos/7512867/pexels-photo-7512867.jpeg",
   },
   {
     id: 5,
     title: "Estate Liquidation",
     before: true,
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.pexels.com/photos/4246109/pexels-photo-4246109.jpeg",
   },
   {
     id: 6,
     title: "Commercial Space",
     before: false,
-    src: "https://images.unsplash.com/photo-1547407219-79f8f6bca5b8?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.pexels.com/photos/1119074/pexels-photo-1119074.jpeg",
   },
 ]
 
@@ -64,18 +64,18 @@ export default function Gallery() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
-            Before {" "}
-            <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-black mb-4">
+            <span className="text-foreground">Before</span>{" "}
+            <span className="text-primary-yellow">
               & After
             </span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-foreground/75 max-w-2xl mx-auto mb-8 font-medium">
             See the transformation we bring to homes and businesses across the region
           </p>
 
@@ -90,7 +90,7 @@ export default function Gallery() {
           {galleryItems.map((item, i) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.08 * i, duration: 0.5 }}
               onClick={() => setSelectedId(item.id)}
@@ -136,7 +136,7 @@ export default function Gallery() {
 
         {/* Call to Action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5 }}
           className="mt-16 text-center"

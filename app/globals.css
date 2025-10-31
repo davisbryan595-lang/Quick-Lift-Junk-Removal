@@ -4,8 +4,8 @@
 
 :root {
   /* Quick Lift Brand Colors - from provided palette */
-  --background: #000000; /* light off-white */
-  --foreground: #020202; /* dark text */
+  --background: #fafaf8; /* light off-white */
+  --foreground: #000000; /* dark text */
   --primary-yellow: #ffc008; /* main yellow */
   --primary-black: #000000;
   --accent-blue: #43b0d6; /* accent blue */
@@ -13,9 +13,9 @@
 
   /* Semantic tokens for light mode */
   --card: linear-gradient(135deg, rgba(255,192,8,0.08), rgba(67,176,214,0.06));
-  --card-foreground: #2d2d2d;
+  --card-foreground: #000000;
   --popover: rgba(255,255,255,0.95);
-  --popover-foreground: #2d2d2d;
+  --popover-foreground: #000000;
   --primary: var(--primary-yellow);
   --primary-foreground: #000000;
   --secondary: var(--accent-blue);
@@ -36,7 +36,7 @@
   --chart-5: rgba(67,176,214,0.1);
   --radius: 0.5rem;
   --sidebar: rgba(255,255,255,0.9);
-  --sidebar-foreground: #2d2d2d;
+  --sidebar-foreground: #000000;
   --sidebar-primary: var(--primary-yellow);
   --sidebar-primary-foreground: #000000;
   --sidebar-accent: var(--accent-blue);
@@ -47,11 +47,11 @@
 
 .dark {
   --background: #fafaf8;
-  --foreground: #2d2d2d;
+  --foreground: #000000;
   --card: linear-gradient(135deg, rgba(255,192,8,0.08), rgba(67,176,214,0.06));
-  --card-foreground: #2d2d2d;
+  --card-foreground: #000000;
   --popover: rgba(255,255,255,0.95);
-  --popover-foreground: #2d2d2d;
+  --popover-foreground: #000000;
   --primary: var(--primary-yellow);
   --primary-foreground: #000000;
   --secondary: var(--accent-blue);
@@ -71,7 +71,7 @@
   --chart-4: rgba(255,192,8,0.1);
   --chart-5: rgba(67,176,214,0.1);
   --sidebar: rgba(255,255,255,0.9);
-  --sidebar-foreground: #2d2d2d;
+  --sidebar-foreground: #000000;
   --sidebar-primary: var(--primary-yellow);
   --sidebar-primary-foreground: #000000;
   --sidebar-accent: var(--accent-blue);
@@ -132,7 +132,7 @@
 
 /* Light mode base styles */
 body {
-  background: linear-gradient(135deg, #fafaf8 0%, rgba(255,192,8,0.04) 25%, rgba(67,176,214,0.03) 50%, rgba(255,153,8,0.04) 75%, #fafaf8 100%);
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255,200,0,0.15) 25%, rgba(100,180,255,0.15) 50%, rgba(255,150,0,0.15) 75%, #ffffff 100%);
   background-attachment: fixed;
 }
 
