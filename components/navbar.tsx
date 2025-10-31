@@ -113,11 +113,11 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="tel:(240)500-0946"
-                className="block px-4 py-2 mt-4 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-center text-sm"
-              >
-                Call Now
-              </a>
+   href="tel:(240)500-0946"
+   className="nav-link block px-4 py-2 mt-4 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-center text-sm"
+ >
+   Call Now
+ </a>
             </div>
           </motion.div>
         )}
