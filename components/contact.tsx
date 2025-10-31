@@ -142,7 +142,7 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-2xl bg-gradient-to-br from-primary-black to-[#1a1a1a] border border-primary-yellow/20 hover:border-primary-yellow/50 transition-colors duration-300"
+              className="p-8 rounded-2xl bg-gradient-to-br from-white/70 to-blue-50/50 border border-primary-yellow/20 hover:border-primary-yellow/50 transition-colors duration-300"
             >
               <div className="space-y-5">
                 {/* Name */}
