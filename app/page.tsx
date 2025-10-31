@@ -1,5 +1,7 @@
 "use client"
 
+"use client"
+
 import { useEffect, useState } from "react"
 import Preloader from "@/components/preloader"
 import Navbar from "@/components/navbar"
@@ -11,6 +13,8 @@ import Pricing from "@/components/pricing"
 import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
+
+export const revalidate = 3600
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
