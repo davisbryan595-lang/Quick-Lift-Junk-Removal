@@ -40,11 +40,9 @@ export default function About() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground">
-              Why{" "}
-              <span
-                className="text-primary-yellow font-black"
-              >
+            <h2 className="text-5xl md:text-6xl font-black mb-6">
+              <span className="text-foreground">Why</span>{" "}
+              <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
                 Choose Us
               </span>
             </h2>
