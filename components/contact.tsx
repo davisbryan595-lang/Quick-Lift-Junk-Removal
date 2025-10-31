@@ -151,7 +151,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Full Name</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Full Name</label>
                   <input
                     type="text"
                     name="name"
