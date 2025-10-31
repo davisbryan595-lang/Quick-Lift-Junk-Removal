@@ -41,12 +41,12 @@ export default function Navbar() {
           <Link href="#home" className="flex items-center gap-2 group" aria-label="Home">
             <motion.div
               whileHover={{ scale: 1.06 }}
-              className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold p-1 flex items-center justify-center transition-all duration-300"
+              className="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center transition-all duration-300"
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F17ff38e3ca444c7a966105fa5172e797?format=webp&width=800"
                 alt="Quick Lift logo"
-                className="w-full h-full object-contain rounded-full drop-shadow-[0_12px_32px_rgba(253,216,53,0.7)]"
+                className="w-[calc(100%-2px)] h-[calc(100%-2px)] object-contain rounded-full"
               />
             </motion.div>
           </Link>
