@@ -34,7 +34,7 @@ export default function About() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+          {/* Text Content - UNCHANGED */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -76,7 +76,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Stats Grid with Animated Counters */}
+          {/* RIGHT SIDE: 4 Stat Cards with Animated Counters */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -93,17 +93,16 @@ export default function About() {
   )
 }
 
-// Reusable Animated Counter Component
+// Animated Counter for Right-Side Cards Only
 function StatCard({ stat, inView, delay }: { stat: any; inView: boolean; delay: number }) {
   const [count, setCount] = useState(0)
-  const nodeRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     if (!inView) return
 
     let start = 0
     const end = stat.number
-    const duration = 1500 // ms
+    const duration = 1500 // 1.5 seconds
     const increment = end / (duration / 16) // ~60fps
 
     const timer = setInterval(() => {
@@ -131,10 +130,8 @@ function StatCard({ stat, inView, delay }: { stat: any; inView: boolean; delay: 
         className="mb-3"
       >
         <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
-          <span ref={nodeRef}>
-            {count}
-            {stat.suffix}
-          </span>
+          {count}
+          {stat.suffix}
         </div>
       </motion.div>
       <p className="text-foreground/70 text-sm font-medium group-hover:text-primary-yellow transition-colors">
