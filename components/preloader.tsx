@@ -21,7 +21,7 @@ export default function Preloader() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] opacity-50" />
 
       {/* Particle field */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" aria-hidden="true">
         {particles.map((particle) => (
           <motion.div
             key={particle.id}
@@ -32,45 +32,27 @@ export default function Preloader() {
               y: `${particle.y + (Math.random() - 0.5) * 50}%`,
               opacity: [0, 1, 0],
             }}
-            transition={{
-              duration: 2.5,
-              ease: "easeOut",
-            }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
           />
         ))}
       </div>
 
       {/* Logo container with 3D rotation */}
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
-        >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2.5, ease: "easeInOut" }}
-            className="w-24 h-24 md:w-32 md:h-32"
-          >
-            <svg viewBox="0 0 200 200" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Logo simplified - gear */}
-              <circle cx="100" cy="100" r="95" stroke="#FDD835" strokeWidth="3" />
-              <circle cx="100" cy="100" r="85" fill="none" stroke="#FDD835" strokeWidth="2" />
-
-              {/* Truck silhouette */}
-              <g transform="translate(70, 80)">
-                <rect x="0" y="20" width="50" height="25" fill="#FDD835" rx="2" />
-                <rect x="45" y="10" width="15" height="15" fill="#FDD835" />
-                <circle cx="10" cy="50" r="6" fill="#FDD835" />
-                <circle cx="50" cy="50" r="6" fill="#FDD835" />
-              </g>
-            </svg>
-          </motion.div>
-        </motion.div>
+        <motion.img
+          src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F07ca97242bc2430e81a2d57a4fdb367c?format=webp&width=400"
+          alt="Quick Lift Junk Removal logo"
+          width={128}
+          height={128}
+          className="w-24 h-24 md:w-32 md:h-32 object-contain drop-shadow-[0_0_16px_rgba(253,216,53,0.6)]"
+          initial={{ opacity: 0, rotateY: 0, scale: 0.8 }}
+          animate={{ opacity: 1, rotateY: 360, scale: 1 }}
+          transition={{ duration: 2.5, ease: "easeInOut" }}
+        />
 
         {/* Pulsing glow effect */}
         <motion.div
+          aria-hidden="true"
           animate={{
             boxShadow: [
               "0 0 20px rgba(253, 216, 53, 0.5)",
