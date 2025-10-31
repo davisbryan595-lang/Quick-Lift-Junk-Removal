@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Check } from "lucide-react"
 
 export default function Hero() {
   return (
