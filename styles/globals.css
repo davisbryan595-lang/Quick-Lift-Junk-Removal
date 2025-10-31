@@ -259,7 +259,7 @@ button:hover::after, .btn:hover::after, .btn-primary:hover::after, a:hover::afte
 }
 
 /* Special: navbar links (keep compact) */
-nav a, .hidden.md\:flex a, .md\\:flex a {
+nav a, .nav-link {
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
 }
