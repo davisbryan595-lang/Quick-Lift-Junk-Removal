@@ -169,7 +169,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Phone Number</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
@@ -187,7 +187,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Email Address</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Email Address</label>
                   <input
                     type="email"
                     name="email"
@@ -205,7 +205,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Service Type</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Service Type</label>
                   <select
                     name="serviceType"
                     value={formData.serviceType}
@@ -225,7 +225,7 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Message</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
