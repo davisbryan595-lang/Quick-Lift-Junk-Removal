@@ -4,6 +4,7 @@ import { Geist, Geist_Mono, Archivo } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 import "../styles/globals.css"
+import "./globals.css"
 
 const _archivo = Archivo({ subsets: ["latin"], weight: ["400", "700", "900"] })
 const _geist = Geist({ subsets: ["latin"] })
