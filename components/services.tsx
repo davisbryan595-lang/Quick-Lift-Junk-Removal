@@ -52,7 +52,7 @@ export default function Services() {
   const [expandedService, setExpandedService] = useState("residential")
 
   return (
-    <section ref={ref} id="services" className="relative py-20 md:py-32 bg-primary-black">
+    <section ref={ref} id="services" className="relative py-20 md:py-32 bg-white/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
