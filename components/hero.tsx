@@ -1,13 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden pt-20">
-      {/* Background with animated gradients + cinematic video */}
+      {/* Background: Local hero.mp4 + Fallback */}
       <div className="absolute inset-0 z-0">
-        {/* Video background (Pexels) with high-def fallback image */}
+        {/* Local Video Background */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -15,43 +16,50 @@ export default function Hero() {
           loop
           playsInline
           preload="none"
-          poster="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80"
-          aria-label="Cinematic junk removal action video background"
+          poster="/hero-poster.jpg" // Optional: Add a high-res poster image in /public
+          aria-label="Quick Lift Junk Removal in action – fast, clean, professional"
         >
-          <source src="https://player.vimeo.com/external/375604418.sd.mp4?s=..." type="video/mp4" />
+          <source src="/hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
 
-        {/* High-def image fallback for browsers that block autoplay */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=2000&q=80')",
-            opacity: 0.9,
-          }}
-        />
+        {/* Fallback Image (Next.js Optimized) */}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-fallback.webp" // Optional: Add optimized fallback in /public
+            alt="Quick Lift Junk Removal truck and team in action"
+            fill
+            className="object-cover"
+            priority={false}
+            loading="lazy"
+            quality={85}
+          />
+        </div>
 
+        {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
 
-        {/* Animated gradient mesh */}
+        {/* Animated Gradient Mesh (Logo-Inspired) */}
         <div className="absolute inset-0 opacity-30">
           <motion.div
             animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
-            transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
             className="w-full h-full"
             style={{
-              backgroundImage:
-                `linear-gradient(135deg, rgba(253, 216, 53, 0.1) 0%, rgba(101, 143, 226, 0.1) 50%, rgba(253, 216, 53, 0.1) 100%)`,
+              backgroundImage: `linear-gradient(135deg, 
+                rgba(253, 216, 53, 0.1) 0%, 
+                rgba(101, 143, 226, 0.1) 50%, 
+                rgba(253, 216, 53, 0.1) 100%)`,
               backgroundSize: "200% 200%",
             }}
           />
         </div>
       </div>
 
-      {/* Content */}
+      {/* Hero Content */}
       <div className="relative z-10 h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Animated headline */}
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,6 +72,7 @@ export default function Hero() {
               </span>
             </div>
 
+            {/* Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight">
               <span className="text-white">Fast & Affordable</span>
               <br />
@@ -72,11 +81,12 @@ export default function Hero() {
               </span>
             </h1>
 
+            {/* Animated Underline */}
             <motion.div
               className="h-1 bg-gradient-to-r from-transparent via-primary-yellow to-transparent mx-auto mt-6"
               style={{ width: "200px" }}
               animate={{ width: ["100px", "250px", "100px"] }}
-              transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
 
             {/* Subheading */}
@@ -89,7 +99,7 @@ export default function Hero() {
               Serving Western Maryland, West Virginia & Pennsylvania with premium junk removal and hauling services
             </motion.p>
 
-            {/* Trust badges */}
+            {/* Trust Badges */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -97,9 +107,9 @@ export default function Hero() {
               className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10"
             >
               {[
-                { icon: "✓", label: "Licensed & Insured" },
-                { icon: "🌱", label: "Eco-Friendly" },
-                { icon: "⚡", label: "Same-Day Service" },
+                { icon: "Checkmark", label: "Licensed & Insured" },
+                { icon: "Leaf", label: "Eco-Friendly" },
+                { icon: "Lightning", label: "Same-Day Service" },
               ].map((badge, i) => (
                 <motion.div
                   key={i}
@@ -137,16 +147,16 @@ export default function Hero() {
               </motion.a>
             </motion.div>
 
-            {/* Scroll indicator */}
+            {/* Scroll Indicator */}
             <motion.div
               animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+              transition={{ duration: 2, repeat: Infinity }}
               className="flex justify-center mt-10"
             >
               <div className="w-6 h-10 border-2 border-primary-yellow/30 rounded-full flex items-center justify-center">
                 <motion.div
                   animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                  transition={{ duration: 2, repeat: Infinity }}
                   className="w-1 h-2 bg-primary-yellow rounded-full"
                 />
               </div>
