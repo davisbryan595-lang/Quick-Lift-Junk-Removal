@@ -64,7 +64,7 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             Before &{" "}
@@ -72,9 +72,14 @@ export default function Gallery() {
               After
             </span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
             See the transformation we bring to homes and businesses across the region
           </p>
+
+          {/* Insert Before/After Slider */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <BeforeAfterSlider />
+          </div>
         </motion.div>
 
         {/* Gallery Grid */}
