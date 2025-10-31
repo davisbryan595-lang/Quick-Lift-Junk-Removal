@@ -130,6 +130,12 @@
   }
 }
 
+/* Light mode base styles */
+body {
+  background: linear-gradient(135deg, #fafaf8 0%, rgba(255,192,8,0.04) 25%, rgba(67,176,214,0.03) 50%, rgba(255,153,8,0.04) 75%, #fafaf8 100%);
+  background-attachment: fixed;
+}
+
 /* Luxury animations and effects for Quick Lift brand */
 @keyframes glow-pulse {
   0%,
