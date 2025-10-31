@@ -254,7 +254,7 @@ button:hover::after, .btn:hover::after, .btn-primary:hover::after, a:hover::afte
   height: 220%;
   background: radial-gradient(circle at 50% 50%, rgba(67,176,214,0.06), transparent 40%);
   transform: translateX(-50%) scale(1);
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   transition: opacity 400ms ease;
 }
