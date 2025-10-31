@@ -101,8 +101,8 @@ export default function Pricing() {
               <div
                 className={`p-8 h-full ${
                   tier.featured
-                    ? "bg-gradient-to-br from-primary-yellow/20 to-accent-blue/10 border-2 border-primary-yellow/50"
-                    : "bg-gradient-to-br from-primary-black to-[#1a1a1a] border border-primary-yellow/20"
+                    ? "bg-gradient-to-br from-primary-yellow/25 to-accent-blue/15 border-2 border-primary-yellow/50"
+                    : "bg-gradient-to-br from-white/60 to-blue-50/40 border border-primary-yellow/20"
                 }`}
               >
                 {/* Featured badge */}
