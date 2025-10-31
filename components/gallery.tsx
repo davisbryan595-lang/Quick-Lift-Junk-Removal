@@ -5,12 +5,42 @@ import { useInView } from "react-intersection-observer"
 import { useState } from "react"
 
 const galleryItems = [
-  { id: 1, title: "Residential Cleanout", before: true },
-  { id: 2, title: "Basement Removal", before: false },
-  { id: 3, title: "Furniture Hauling", before: true },
-  { id: 4, title: "Construction Cleanup", before: false },
-  { id: 5, title: "Estate Liquidation", before: true },
-  { id: 6, title: "Commercial Space", before: false },
+  {
+    id: 1,
+    title: "Residential Cleanout",
+    before: true,
+    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    id: 2,
+    title: "Basement Removal",
+    before: false,
+    src: "https://images.unsplash.com/photo-1581091012184-7d39f4e7f8e1?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    id: 3,
+    title: "Furniture Hauling",
+    before: true,
+    src: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    id: 4,
+    title: "Construction Cleanup",
+    before: false,
+    src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    id: 5,
+    title: "Estate Liquidation",
+    before: true,
+    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    id: 6,
+    title: "Commercial Space",
+    before: false,
+    src: "https://images.unsplash.com/photo-1547407219-79f8f6bca5b8?auto=format&fit=crop&w=1400&q=80",
+  },
 ]
 
 export default function Gallery() {
@@ -63,13 +93,8 @@ export default function Gallery() {
                 {/* Background placeholder with gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-yellow/10 to-accent-blue/10" />
 
-                {/* Image placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f]">
-                  <div className="text-center">
-                    <div className="text-4xl mb-3">{item.before ? "🔨" : "✨"}</div>
-                    <p className="text-primary-yellow text-sm font-semibold">{item.before ? "BEFORE" : "AFTER"}</p>
-                  </div>
-                </div>
+                {/* Image */}
+                <img src={item.src} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
