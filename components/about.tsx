@@ -15,7 +15,7 @@ export default function About() {
   ]
 
   return (
-    <section ref={ref} className="relative py-20 md:py-32 bg-primary-black overflow-hidden">
+    <section ref={ref} className="relative py-20 md:py-32 bg-white/25 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <motion.div
