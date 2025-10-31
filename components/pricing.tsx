@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { Check } from "lucide-react"
 
 const pricingTiers = [
   {
@@ -140,7 +141,7 @@ export default function Pricing() {
                       className="flex items-start gap-3 text-sm"
                     >
                       <span className="w-5 h-5 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-primary-black font-bold text-xs">Checkmark</span>
+                        <Check className="w-3 h-3 text-primary-black" />
                       </span>
                       <span className="text-foreground/80">{feature}</span>
                     </motion.li>

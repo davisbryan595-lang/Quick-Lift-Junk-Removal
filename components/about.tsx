@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import { Check } from "lucide-react"
 
 export default function About() {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true })
@@ -70,8 +71,8 @@ export default function About() {
                   transition={{ delay: 0.1 * i }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-1 glow-pulse">
-                    <span className="text-primary-black font-bold text-sm">Checkmark</span>
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-1">
+                    <Check className="w-4 h-4 text-primary-black" />
                   </div>
                   <p className="text-foreground/80">{item}</p>
                 </motion.div>
