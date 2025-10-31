@@ -4,8 +4,8 @@
 
 :root {
   /* Quick Lift Brand Colors - from provided palette */
-  --background: #fafaf8; /* light off-white */
-  --foreground: #2d2d2d; /* dark text */
+  --background: #000000; /* light off-white */
+  --foreground: #020202; /* dark text */
   --primary-yellow: #ffc008; /* main yellow */
   --primary-black: #000000;
   --accent-blue: #43b0d6; /* accent blue */
