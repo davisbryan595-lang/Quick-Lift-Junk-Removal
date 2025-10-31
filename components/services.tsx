@@ -91,7 +91,7 @@ export default function Services() {
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="text-5xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
                   <p className="text-foreground/70 text-sm mb-6">{service.description}</p>
 
                   {/* Features */}
