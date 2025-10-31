@@ -158,7 +158,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white placeholder-foreground/40 outline-none transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground placeholder-foreground/50 outline-none transition-all duration-300"
                     placeholder="Your name"
                   />
                 </motion.div>
