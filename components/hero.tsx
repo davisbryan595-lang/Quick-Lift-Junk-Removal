@@ -23,18 +23,7 @@ export default function Hero() {
           Your browser does not support the video tag.
         </video>
 
-        {/* Fallback Image (Next.js Optimized) */}
-        <div className="absolute inset-0">
-          <Image
-            src="/hero-fallback.webp" // Optional: Add optimized fallback in /public
-            alt="Quick Lift Junk Removal truck and team in action"
-            fill
-            className="object-cover"
-            priority={false}
-            loading="lazy"
-            quality={85}
-          />
-        </div>
+       
 
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
