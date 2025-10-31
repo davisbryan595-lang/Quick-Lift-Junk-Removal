@@ -75,7 +75,7 @@ export default function Gallery() {
               & After
             </span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-foreground/75 max-w-2xl mx-auto mb-8 font-medium">
             See the transformation we bring to homes and businesses across the region
           </p>
 

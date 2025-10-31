@@ -67,7 +67,7 @@ export default function Services() {
                 Services
               </span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/75 max-w-2xl mx-auto font-medium">
             Comprehensive junk removal and hauling solutions for residential, commercial, and specialty projects
           </p>
         </motion.div>

@@ -110,7 +110,7 @@ export default function Testimonials() {
             </div>
 
             {/* Quote */}
-            <p className="text-xl text-foreground/80 mb-8 italic leading-relaxed">
+            <p className="text-2xl text-foreground/85 mb-8 italic leading-relaxed font-medium">
               "{testimonials[currentIndex].text}"
             </p>
 

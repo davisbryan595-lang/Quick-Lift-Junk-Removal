@@ -77,7 +77,7 @@ export default function Pricing() {
               Pricing
             </span>
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/75 max-w-2xl mx-auto font-medium">
             No hidden fees. No surprises. Just honest, competitive pricing for your junk removal needs.
           </p>
         </motion.div>

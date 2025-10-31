@@ -67,7 +67,7 @@ export default function Contact() {
               </span>
             </h2>
 
-            <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
+            <p className="text-xl text-foreground/80 mb-8 leading-relaxed font-medium">
               Contact us for a free, no-obligation estimate. Our team is ready to help you declutter and transform your
               space.
             </p>

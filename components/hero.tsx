@@ -78,7 +78,7 @@ export default function Hero() {
               initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-xl text-foreground mb-8 max-w-2xl mx-auto"
+              className="text-xl md:text-2xl text-foreground mb-8 max-w-2xl mx-auto font-medium"
             >
               Serving Western Maryland, West Virginia & Pennsylvania with premium junk removal and hauling services
             </motion.p>

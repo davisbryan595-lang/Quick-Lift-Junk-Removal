@@ -47,7 +47,7 @@ export default function About() {
               </span>
             </h2>
 
-            <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
+            <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
               With over a decade of experience, Quick Lift has become the trusted name in junk removal across Maryland,
               West Virginia, and Pennsylvania. We pride ourselves on fast service, transparent pricing, and
               environmentally responsible disposal.
@@ -67,12 +67,12 @@ export default function About() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.1 * i }}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-3 p-4 rounded-lg border border-primary-yellow bg-primary-yellow/5"
                 >
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-1">
-                    <Check className="w-4 h-4 text-primary-black" />
+                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-5 h-5 text-primary-black font-bold" />
                   </div>
-                  <p className="text-foreground/80">{item}</p>
+                  <p className="text-lg text-foreground/85 font-medium">{item}</p>
                 </motion.div>
               ))}
             </div>
