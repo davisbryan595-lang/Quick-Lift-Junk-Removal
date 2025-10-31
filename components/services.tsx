@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useState } from "react"
+import { Check } from "lucide-react"
 
 const servicesData = [
   {
