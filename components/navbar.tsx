@@ -37,16 +37,16 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo - NO BORDER, NO FILL */}
           <Link href="#home" className="flex items-center gap-2 group" aria-label="Home">
             <motion.div
               whileHover={{ scale: 1.06 }}
-              className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-primary-yellow/50 flex items-center justify-center transition-all duration-300"
+              className="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center transition-all duration-300"
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F17ff38e3ca444c7a966105fa5172e797?format=webp&width=800"
                 alt="Quick Lift logo"
-                className="w-[calc(100%-4px)] h-[calc(100%-4px)] object-contain rounded-full"
+                className="w-full h-full object-contain"
               />
             </motion.div>
           </Link>
