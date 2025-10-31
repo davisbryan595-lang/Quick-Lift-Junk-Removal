@@ -212,8 +212,9 @@ button::before, .btn::before, .btn-primary::before, a::before {
   filter: blur(6px);
   opacity: 0.95;
   transition: transform 650ms cubic-bezier(.2,.9,.3,1), opacity 300ms ease;
-  z-index: 0;
+  z-index: -1;
   border-radius: inherit;
+  pointer-events: none;
 }
 
 /* Text sits above the pseudo element */
