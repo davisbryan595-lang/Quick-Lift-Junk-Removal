@@ -210,7 +210,7 @@ export default function Contact() {
                     name="serviceType"
                     value={formData.serviceType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white outline-none transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground outline-none transition-all duration-300"
                   >
                     <option value="residential">Residential Junk Removal</option>
                     <option value="commercial">Commercial Hauling</option>
