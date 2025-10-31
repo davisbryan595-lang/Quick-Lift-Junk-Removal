@@ -38,14 +38,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary-yellow/50 transition-all duration-300">
-              <span className="text-primary-black font-bold text-sm">QL</span>
-            </div>
-            <div className="hidden md:block">
-              <h1 className="text-primary-yellow font-bold text-sm tracking-widest">QUICK LIFT</h1>
-              <p className="text-foreground/50 text-xs">Junk Removal</p>
-            </div>
+          <Link href="#home" className="flex items-center gap-2 group" aria-label="Home">
+            <motion.div
+              whileHover={{ scale: 1.06 }}
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold p-1 flex items-center justify-center transition-all duration-300"
+            >
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F17ff38e3ca444c7a966105fa5172e797?format=webp&width=800"
+                alt="Quick Lift logo"
+                className="w-full h-full object-contain rounded-full drop-shadow-[0_8px_24px_rgba(253,216,53,0.55)]"
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Nav */}
