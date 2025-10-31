@@ -5,27 +5,37 @@ import { motion } from "framer-motion"
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden pt-20">
-      {/* Background with animated gradients */}
+      {/* Background with animated gradients + cinematic video */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-black via-[#1a1a1a] to-primary-black" />
+        {/* Video background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="/placeholder.svg"
+          aria-label="Cinematic junk removal action video background"
+        >
+          <source src="https://videos.pexels.com/video-files/856673/856673-hd_1280_720_25fps.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
 
         {/* Animated gradient mesh */}
         <div className="absolute inset-0 opacity-30">
           <motion.div
-            animate={{
-              backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
-            }}
+            animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
             transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY }}
             className="w-full h-full"
             style={{
-              backgroundImage: `linear-gradient(135deg, rgba(253, 216, 53, 0.1) 0%, rgba(101, 143, 226, 0.1) 50%, rgba(253, 216, 53, 0.1) 100%)`,
+              backgroundImage:
+                `linear-gradient(135deg, rgba(253, 216, 53, 0.1) 0%, rgba(101, 143, 226, 0.1) 50%, rgba(253, 216, 53, 0.1) 100%)`,
               backgroundSize: "200% 200%",
             }}
           />
         </div>
-
-        {/* Animated video or image placeholder */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-black/80 via-transparent to-transparent" />
       </div>
 
       {/* Content */}
