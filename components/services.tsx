@@ -62,15 +62,9 @@ export default function Services() {
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             Our{" "}
-            <span
-              className="inline-block bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse"
-              style={{
-                backgroundSize: "200%",
-                animation: "gradient-shift 4s ease infinite",
-              }}
-            >
-              Services
-            </span>
+            <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+                Services
+              </span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Comprehensive junk removal and hauling solutions for residential, commercial, and specialty projects

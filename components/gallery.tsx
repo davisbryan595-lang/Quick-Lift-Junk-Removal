@@ -71,14 +71,8 @@ export default function Gallery() {
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             Before {" "}
-            <span
-              className="inline-block bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse"
-              style={{
-                backgroundSize: "200%",
-                animation: "gradient-shift 4s ease infinite",
-              }}
-            >
-             & After
+            <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+              & After
             </span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">

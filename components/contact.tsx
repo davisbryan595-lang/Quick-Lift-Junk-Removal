@@ -62,8 +62,8 @@ export default function Contact() {
           >
             <h2 className="text-4xl md:text-5xl font-black mb-6">
               Get Your Free{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
-                Quote Today
+              <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+                QOUTE TODAY
               </span>
             </h2>
 

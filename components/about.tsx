@@ -42,11 +42,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
               Why{" "}
               <span
-                className="inline-block bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse"
-                style={{
-                  backgroundSize: "200%",
-                  animation: "gradient-shift 4s ease infinite",
-                }}
+                className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent"
               >
                 Choose Us
               </span>

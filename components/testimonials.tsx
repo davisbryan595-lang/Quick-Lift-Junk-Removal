@@ -84,8 +84,8 @@ export default function Testimonials() {
         >
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             What Our Clients{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
-              Say
+            <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
+              SAY
             </span>
           </h2>
         </motion.div>
