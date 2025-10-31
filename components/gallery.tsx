@@ -51,7 +51,7 @@ export default function Gallery() {
   const [selectedId, setSelectedId] = useState<number | null>(null)
 
   return (
-    <section ref={ref} id="gallery" className="relative py-20 md:py-32 bg-primary-black overflow-hidden">
+    <section ref={ref} id="gallery" className="relative py-20 md:py-32 bg-white/35 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-40">
         <motion.div
