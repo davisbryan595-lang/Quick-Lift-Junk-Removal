@@ -53,7 +53,7 @@ export default function Pricing() {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true })
 
   return (
-    <section ref={ref} id="pricing" className="relative py-20 md:py-32 bg-primary-black">
+    <section ref={ref} id="pricing" className="relative py-20 md:py-32 bg-white/30">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-10">
         <motion.div
