@@ -67,7 +67,7 @@ export default function About() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.1 * i }}
-                  className="flex items-start gap-3 p-4 rounded-lg border border-primary-yellow bg-primary-yellow/5"
+                  className="flex items-start gap-3 p-4 rounded-lg border-2 border-primary-yellow bg-primary-yellow/10"
                 >
                   <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-5 h-5 text-primary-black font-bold" />
