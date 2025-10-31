@@ -79,7 +79,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`dark font-sans antialiased`}>
+      <body className={`font-sans antialiased`}>
         <Script id="jsonld-localbusiness" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(jsonLd)}
         </Script>
