@@ -231,7 +231,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white placeholder-foreground/40 outline-none transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground placeholder-foreground/50 outline-none transition-all duration-300 resize-none"
                     placeholder="Tell us about your junk removal needs..."
                   />
                 </motion.div>
