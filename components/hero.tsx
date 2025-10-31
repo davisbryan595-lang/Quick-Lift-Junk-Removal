@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen w-full overflow-hidden pt-20">
       {/* Background with animated gradients + cinematic video */}
       <div className="absolute inset-0 z-0">
-        {/* Video background */}
+        {/* Video background (Pexels) with high-def fallback image */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -15,11 +15,21 @@ export default function Hero() {
           loop
           playsInline
           preload="none"
-          poster="/placeholder.svg"
+          poster="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80"
           aria-label="Cinematic junk removal action video background"
         >
-          <source src="https://videos.pexels.com/video-files/856673/856673-hd_1280_720_25fps.mp4" type="video/mp4" />
+          <source src="https://player.vimeo.com/external/375604418.sd.mp4?s=..." type="video/mp4" />
         </video>
+
+        {/* High-def image fallback for browsers that block autoplay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=2000&q=80')",
+            opacity: 0.9,
+          }}
+        />
 
         <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
 
