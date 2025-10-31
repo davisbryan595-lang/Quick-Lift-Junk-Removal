@@ -86,19 +86,9 @@ export default function RootLayout({
           {JSON.stringify(jsonLd)}
         </Script>
         {/* Background particles (client-only) */}
-        <div id="background-particles-root" className="pointer-events-none">
-          {/* dynamically loaded to avoid SSR issues */}
-        </div>
+        <BackgroundParticles />
         {children}
         <Analytics />
-        <Script id="load-bg-particles" strategy="afterInteractive">
-          {`(function(){
-            const load = async ()=>{
-              const mod = await import('../components/background-particles.tsx')
-            }
-            load()
-          })()`}
-        </Script>
       </body>
     </html>
   )
