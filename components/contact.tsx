@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   return (
-    <section ref={ref} id="contact" className="relative py-20 md:py-32 bg-primary-black overflow-hidden">
+    <section ref={ref} id="contact" className="relative py-20 md:py-32 bg-white/40 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-30">
         <motion.div
