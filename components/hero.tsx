@@ -20,8 +20,8 @@ export default function Hero() {
           sizes="100vw"
         />
 
-        {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
+        {/* Light Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/30 to-white/50" />
 
         {/* Animated Gradient Mesh (Logo-Inspired) */}
         <div className="absolute inset-0 opacity-30">
