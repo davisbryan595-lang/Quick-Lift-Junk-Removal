@@ -12,37 +12,37 @@ const galleryItems = [
     id: 1,
     title: "Residential Cleanout",
     before: true,
-    src: "/service3.jpg",
+    src: "https://images.pexels.com/photos/6195122/pexels-photo-6195122.jpeg",
   },
   {
     id: 2,
     title: "Basement Removal",
     before: false,
-    src: "/service1.jpg",
+    src: "https://images.pexels.com/photos/7475428/pexels-photo-7475428.jpeg",
   },
   {
     id: 3,
     title: "Furniture Hauling",
     before: true,
-    src: "/serr2.jpg",
+    src: "https://images.pexels.com/photos/27001161/pexels-photo-27001161.jpeg",
   },
   {
     id: 4,
     title: "Construction Cleanup",
     before: false,
-    src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.pexels.com/photos/7512867/pexels-photo-7512867.jpeg",
   },
   {
     id: 5,
     title: "Estate Liquidation",
     before: true,
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.pexels.com/photos/4246109/pexels-photo-4246109.jpeg",
   },
   {
     id: 6,
     title: "Commercial Space",
     before: false,
-    src: "https://images.unsplash.com/photo-1547407219-79f8f6bca5b8?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.pexels.com/photos/1119074/pexels-photo-1119074.jpeg",
   },
 ]
 
