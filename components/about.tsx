@@ -1,7 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
+import { motion, useInView } from "framer-motion"
+import { useRef, useEffect, useState } from "react"
 import { Check } from "lucide-react"
 
 export default function About() {
@@ -42,9 +42,7 @@ export default function About() {
           >
             <h2 className="text-5xl md:text-6xl font-black mb-6">
               <span className="text-foreground">Why</span>{" "}
-              <span className="text-primary-yellow">
-                Choose Us
-              </span>
+              <span className="text-primary-yellow">Choose Us</span>
             </h2>
 
             <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
@@ -78,7 +76,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Stats Grid */}
+          {/* Stats Grid with Animated Counters */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -86,30 +84,62 @@ export default function About() {
             className="grid grid-cols-2 gap-6"
           >
             {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -10 }}
-                className="p-6 rounded-xl bg-gradient-to-br from-primary-yellow/10 to-accent-blue/10 border border-primary-yellow/20 hover:border-primary-yellow/50 transition-colors duration-300 group cursor-pointer"
-              >
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={inView ? { opacity: 1 } : {}}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="mb-3"
-                >
-                  <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
-                    {stat.number}
-                    {stat.suffix}
-                  </div>
-                </motion.div>
-                <p className="text-foreground/70 text-sm font-medium group-hover:text-primary-yellow transition-colors">
-                  {stat.label}
-                </p>
-              </motion.div>
+              <StatCard key={i} stat={stat} inView={inView} delay={0.2 + i * 0.1} />
             ))}
           </motion.div>
         </div>
       </div>
     </section>
+  )
+}
+
+// Reusable Animated Counter Component
+function StatCard({ stat, inView, delay }: { stat: any; inView: boolean; delay: number }) {
+  const [count, setCount] = useState(0)
+  const nodeRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    if (!inView) return
+
+    let start = 0
+    const end = stat.number
+    const duration = 1500 // ms
+    const increment = end / (duration / 16) // ~60fps
+
+    const timer = setInterval(() => {
+      start += increment
+      if (start >= end) {
+        setCount(end)
+        clearInterval(timer)
+      } else {
+        setCount(Math.floor(start))
+      }
+    }, 16)
+
+    return () => clearInterval(timer)
+  }, [inView, stat.number])
+
+  return (
+    <motion.div
+      whileHover={{ y: -10 }}
+      className="p-6 rounded-xl bg-gradient-to-br from-primary-yellow/10 to-accent-blue/10 border border-primary-yellow/20 hover:border-primary-yellow/50 transition-colors duration-300 group cursor-pointer"
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : {}}
+        transition={{ delay }}
+        className="mb-3"
+      >
+        <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
+          <span ref={nodeRef}>
+            {count}
+            {stat.suffix}
+          </span>
+        </div>
+      </motion.div>
+      <p className="text-foreground/70 text-sm font-medium group-hover:text-primary-yellow transition-colors">
+        {stat.label}
+      </p>
+    </motion.div>
   )
 }
