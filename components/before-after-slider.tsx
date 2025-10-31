@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 export default function BeforeAfterSlider({
-  beforeSrc = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80",
-  afterSrc = "https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1600&q=80",
+  beforeSrc = "/before.jpg",
+  afterSrc = "/after.jpg",
 }: {
   beforeSrc?: string
   afterSrc?: string
