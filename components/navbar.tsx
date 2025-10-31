@@ -106,7 +106,7 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-2 text-foreground/70 hover:text-primary-yellow transition-colors text-sm font-medium"
+                  className="nav-link block px-4 py-2 text-foreground/70 hover:text-primary-yellow transition-colors text-sm font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
