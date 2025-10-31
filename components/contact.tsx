@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   return (
-    <section ref={ref} id="contact" className="relative py-20 md:py-32 bg-primary-black overflow-hidden">
+    <section ref={ref} id="contact" className="relative py-20 md:py-32 bg-white/40 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-30">
         <motion.div
@@ -142,7 +142,7 @@ export default function Contact() {
           >
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-2xl bg-gradient-to-br from-primary-black to-[#1a1a1a] border border-primary-yellow/20 hover:border-primary-yellow/50 transition-colors duration-300"
+              className="p-8 rounded-2xl bg-gradient-to-br from-white/70 to-blue-50/50 border border-primary-yellow/20 hover:border-primary-yellow/50 transition-colors duration-300"
             >
               <div className="space-y-5">
                 {/* Name */}
@@ -151,14 +151,14 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Full Name</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Full Name</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white placeholder-foreground/40 outline-none transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground placeholder-foreground/50 outline-none transition-all duration-300"
                     placeholder="Your name"
                   />
                 </motion.div>
@@ -169,14 +169,14 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Phone Number</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Phone Number</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white placeholder-foreground/40 outline-none transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground placeholder-foreground/50 outline-none transition-all duration-300"
                     placeholder="(240) 500-0946"
                   />
                 </motion.div>
@@ -187,14 +187,14 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Email Address</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Email Address</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white placeholder-foreground/40 outline-none transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground placeholder-foreground/50 outline-none transition-all duration-300"
                     placeholder="your@email.com"
                   />
                 </motion.div>
@@ -205,12 +205,12 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Service Type</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Service Type</label>
                   <select
                     name="serviceType"
                     value={formData.serviceType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white outline-none transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground outline-none transition-all duration-300"
                   >
                     <option value="residential">Residential Junk Removal</option>
                     <option value="commercial">Commercial Hauling</option>
@@ -225,13 +225,13 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25 }}
                 >
-                  <label className="block text-sm font-semibold text-white mb-2">Message</label>
+                  <label className="block text-sm font-semibold text-foreground mb-2">Message</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white placeholder-foreground/40 outline-none transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground placeholder-foreground/50 outline-none transition-all duration-300 resize-none"
                     placeholder="Tell us about your junk removal needs..."
                   />
                 </motion.div>

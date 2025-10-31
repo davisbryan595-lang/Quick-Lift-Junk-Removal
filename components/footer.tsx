@@ -10,7 +10,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-primary-black border-t border-primary-yellow/20">
+    <footer className="relative bg-white/50 border-t border-primary-yellow/30">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-t from-primary-yellow/5 to-transparent" />

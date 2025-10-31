@@ -52,7 +52,7 @@ export default function Services() {
   const [expandedService, setExpandedService] = useState("residential")
 
   return (
-    <section ref={ref} id="services" className="relative py-20 md:py-32 bg-primary-black">
+    <section ref={ref} id="services" className="relative py-20 md:py-32 bg-white/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -61,7 +61,7 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
             Our{" "}
             <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
                 Services
@@ -91,7 +91,7 @@ export default function Services() {
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="text-5xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
                   <p className="text-foreground/70 text-sm mb-6">{service.description}</p>
 
                   {/* Features */}

@@ -20,8 +20,8 @@ export default function Hero() {
           sizes="100vw"
         />
 
-        {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
+        {/* Light Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/30 to-white/50" />
 
         {/* Animated Gradient Mesh (Logo-Inspired) */}
         <div className="absolute inset-0 opacity-30">
@@ -58,7 +58,7 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight">
-              <span className="text-white">Fast & Affordable</span>
+              <span className="text-foreground">Fast & Affordable</span>
               <br />
               <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent animate-pulse">
                 Junk Removal

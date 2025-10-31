@@ -51,7 +51,7 @@ export default function Gallery() {
   const [selectedId, setSelectedId] = useState<number | null>(null)
 
   return (
-    <section ref={ref} id="gallery" className="relative py-20 md:py-32 bg-primary-black overflow-hidden">
+    <section ref={ref} id="gallery" className="relative py-20 md:py-32 bg-white/35 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-40">
         <motion.div
@@ -69,7 +69,7 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
             Before {" "}
             <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
               & After

@@ -59,7 +59,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section ref={ref} className="relative py-20 md:py-32 bg-primary-black">
+    <section ref={ref} className="relative py-20 md:py-32 bg-white/40">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-20">
         <motion.div

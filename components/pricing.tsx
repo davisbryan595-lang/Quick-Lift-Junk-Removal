@@ -53,7 +53,7 @@ export default function Pricing() {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true })
 
   return (
-    <section ref={ref} id="pricing" className="relative py-20 md:py-32 bg-primary-black">
+    <section ref={ref} id="pricing" className="relative py-20 md:py-32 bg-white/30">
       {/* Background */}
       <div className="absolute inset-0 z-0 opacity-10">
         <motion.div
@@ -71,7 +71,7 @@ export default function Pricing() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
             Transparent{" "}
             <span className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-transparent">
               Pricing
@@ -101,8 +101,8 @@ export default function Pricing() {
               <div
                 className={`p-8 h-full ${
                   tier.featured
-                    ? "bg-gradient-to-br from-primary-yellow/20 to-accent-blue/10 border-2 border-primary-yellow/50"
-                    : "bg-gradient-to-br from-primary-black to-[#1a1a1a] border border-primary-yellow/20"
+                    ? "bg-gradient-to-br from-primary-yellow/25 to-accent-blue/15 border-2 border-primary-yellow/50"
+                    : "bg-gradient-to-br from-white/60 to-blue-50/40 border border-primary-yellow/20"
                 }`}
               >
                 {/* Featured badge */}

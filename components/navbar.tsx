@@ -31,7 +31,7 @@ export default function Navbar() {
       transition={{ delay: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-primary-black/95 backdrop-blur-md border-b border-primary-yellow/20 shadow-lg shadow-primary-yellow/10"
+          ? "bg-white/90 backdrop-blur-md border-b border-primary-yellow/20 shadow-lg shadow-primary-yellow/10"
           : "bg-transparent"
       }`}
     >
