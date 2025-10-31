@@ -112,7 +112,7 @@ export default function Pricing() {
                     transition={{ delay: 0.3 }}
                     className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black text-xs font-bold rounded-full"
                   >
-                    MOST POPULAR
+                    
                   </motion.div>
                 )}
 
