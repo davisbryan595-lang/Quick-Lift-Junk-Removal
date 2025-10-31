@@ -62,7 +62,7 @@ export default function Contact() {
           >
             <h2 className="text-5xl md:text-6xl font-black mb-6">
               <span className="text-foreground">Get Your Free</span>{" "}
-              <span className="bg-gradient-to-r from-primary-yellow to-accent-gold bg-clip-text text-transparent">
+              <span className="text-primary-yellow">
                 QUOTE TODAY
               </span>
             </h2>
