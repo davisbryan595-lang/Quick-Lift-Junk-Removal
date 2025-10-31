@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Check } from "lucide-react"
 
 export default function Hero() {
   return (
@@ -90,16 +91,18 @@ export default function Hero() {
               className="flex flex-wrap justify-center gap-4 md:gap-6 mb-10"
             >
               {[
-                { icon: "Checkmark", label: "Licensed & Insured" },
-                { icon: "Leaf", label: "Eco-Friendly" },
-                { icon: "Lightning", label: "Same-Day Service" },
+                { label: "Licensed & Insured" },
+                { label: "Eco-Friendly" },
+                { label: "Same-Day Service" },
               ].map((badge, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ scale: 1.05, y: -5 }}
                   className="px-4 py-2 rounded-lg bg-primary-yellow/10 border border-primary-yellow/20 text-sm font-medium text-primary-yellow flex items-center gap-2 hover:bg-primary-yellow/20 transition-colors duration-300"
                 >
-                  <span className="text-lg">{badge.icon}</span>
+                  {i === 0 && <Check className="w-4 h-4" />}
+                  {i === 1 && <span className="text-lg">🍃</span>}
+                  {i === 2 && <span className="text-lg">⚡</span>}
                   {badge.label}
                 </motion.div>
               ))}

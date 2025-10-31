@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useState } from "react"
+import { Check } from "lucide-react"
 
 const servicesData = [
   {
@@ -83,7 +84,7 @@ export default function Services() {
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
               className="group cursor-pointer"
             >
-              <div className="relative h-full rounded-2xl p-8 bg-gradient-to-br from-primary-black to-[#1a1a1a] border border-primary-yellow/20 hover:border-primary-yellow/50 transition-all duration-300 overflow-hidden">
+              <div className="relative h-full rounded-2xl p-8 bg-gradient-to-r from-primary-yellow/15 via-accent-gold/10 to-primary-yellow/15 border border-primary-yellow/20 hover:border-primary-yellow/50 transition-all duration-300 overflow-hidden">
                 {/* Animated background glow */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-br from-primary-yellow/20 to-accent-blue/20 transition-opacity duration-300" />
 
@@ -103,7 +104,7 @@ export default function Services() {
                         transition={{ delay: 0.03 * j, duration: 0.2 }}
                         className="text-sm text-primary-yellow flex items-center gap-2"
                       >
-                        <span className="w-1 h-1 bg-primary-yellow rounded-full" />
+                        <Check className="w-4 h-4 flex-shrink-0" />
                         {feature}
                       </motion.li>
                     ))}
