@@ -5,27 +5,47 @@ import { motion } from "framer-motion"
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden pt-20">
-      {/* Background with animated gradients */}
+      {/* Background with animated gradients + cinematic video */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-black via-[#1a1a1a] to-primary-black" />
+        {/* Video background (Pexels) with high-def fallback image */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=80"
+          aria-label="Cinematic junk removal action video background"
+        >
+          <source src="https://player.vimeo.com/external/375604418.sd.mp4?s=..." type="video/mp4" />
+        </video>
+
+        {/* High-def image fallback for browsers that block autoplay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=2000&q=80')",
+            opacity: 0.9,
+          }}
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
 
         {/* Animated gradient mesh */}
         <div className="absolute inset-0 opacity-30">
           <motion.div
-            animate={{
-              backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
-            }}
+            animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
             transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY }}
             className="w-full h-full"
             style={{
-              backgroundImage: `linear-gradient(135deg, rgba(253, 216, 53, 0.1) 0%, rgba(101, 143, 226, 0.1) 50%, rgba(253, 216, 53, 0.1) 100%)`,
+              backgroundImage:
+                `linear-gradient(135deg, rgba(253, 216, 53, 0.1) 0%, rgba(101, 143, 226, 0.1) 50%, rgba(253, 216, 53, 0.1) 100%)`,
               backgroundSize: "200% 200%",
             }}
           />
         </div>
-
-        {/* Animated video or image placeholder */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-black/80 via-transparent to-transparent" />
       </div>
 
       {/* Content */}

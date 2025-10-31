@@ -2,7 +2,10 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Archivo } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script"
+import "../styles/globals.css"
 import "./globals.css"
+import BackgroundParticles from "@/components/background-particles"
 
 const _archivo = Archivo({ subsets: ["latin"], weight: ["400", "700", "900"] })
 const _geist = Geist({ subsets: ["latin"] })
@@ -31,6 +34,44 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Quick Lift Junk Removal",
+  url: "https://quickliftjunkremoval.com",
+  telephone: "+1-240-500-0946",
+  email: "quickliftjunkremoval@gmail.com",
+  description:
+    "Premium junk removal and hauling services in Western Maryland, West Virginia, and Pennsylvania. Same-day service available.",
+  areaServed: [
+    "Hagerstown",
+    "Frederick",
+    "Martinsburg",
+    "Chambersburg",
+    "Waynesboro",
+    "Greencastle",
+    "Boonsboro",
+    "Shepherdstown",
+    "Thurmont",
+    "Williamsport",
+    "Clear Spring",
+    "Smithsburg",
+    "Halfway",
+    "Maugansville",
+    "Middletown",
+    "Falling Waters",
+    "Hedgesville",
+    "Charles Town",
+    "Harpers Ferry",
+    "Berkeley Springs",
+    "Mercersburg",
+    "Shippensburg",
+  ],
+  sameAs: [
+    "https://www.facebook.com/",
+  ],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +79,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`dark font-sans antialiased`}>
+        <Script id="jsonld-localbusiness" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify(jsonLd)}
+        </Script>
+        {/* Background particles (client-only) */}
+        <BackgroundParticles />
         {children}
         <Analytics />
       </body>

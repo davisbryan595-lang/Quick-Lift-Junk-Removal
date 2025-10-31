@@ -38,14 +38,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary-yellow/50 transition-all duration-300">
-              <span className="text-primary-black font-bold text-sm">QL</span>
-            </div>
-            <div className="hidden md:block">
-              <h1 className="text-primary-yellow font-bold text-sm tracking-widest">QUICK LIFT</h1>
-              <p className="text-foreground/50 text-xs">Junk Removal</p>
-            </div>
+          <Link href="#home" className="flex items-center gap-2 group" aria-label="Home">
+            <motion.div
+              whileHover={{ scale: 1.06 }}
+              className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-primary-yellow to-accent-gold p-1 flex items-center justify-center transition-all duration-300"
+            >
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F17ff38e3ca444c7a966105fa5172e797?format=webp&width=800"
+                alt="Quick Lift logo"
+                className="w-full h-full object-contain rounded-full drop-shadow-[0_12px_32px_rgba(253,216,53,0.7)]"
+              />
+            </motion.div>
           </Link>
 
           {/* Desktop Nav */}
@@ -57,7 +60,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 * i, duration: 0.3 }}
-                className="text-foreground/70 hover:text-primary-yellow transition-colors relative group text-sm font-medium"
+                className="nav-link text-foreground/70 hover:text-primary-yellow transition-colors relative group text-sm font-medium"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-yellow to-transparent group-hover:w-full transition-all duration-300" />
@@ -103,18 +106,18 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-2 text-foreground/70 hover:text-primary-yellow transition-colors text-sm font-medium"
+                  className="nav-link block px-4 py-2 text-foreground/70 hover:text-primary-yellow transition-colors text-sm font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
               <a
-                href="tel:(240)500-0946"
-                className="block px-4 py-2 mt-4 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-center text-sm"
-              >
-                Call Now
-              </a>
+   href="tel:(240)500-0946"
+   className="nav-link block px-4 py-2 mt-4 rounded-full bg-gradient-to-r from-primary-yellow to-accent-gold text-primary-black font-bold text-center text-sm"
+ >
+   Call Now
+ </a>
             </div>
           </motion.div>
         )}

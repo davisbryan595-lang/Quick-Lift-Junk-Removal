@@ -1,98 +1,65 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 
-export default function Preloader() {
-  const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number }>>([])
+export default function Preloader({ duration = 2500 }: { duration?: number }) {
+  const [progress, setProgress] = useState(0)
+  const controls = useAnimation()
 
   useEffect(() => {
-    const newParticles = Array.from({ length: 20 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-    }))
-    setParticles(newParticles)
-  }, [])
+    let start: number | null = null
+    const step = (timestamp: number) => {
+      if (!start) start = timestamp
+      const elapsed = timestamp - start
+      const pct = Math.min(100, Math.round((elapsed / duration) * 100))
+      setProgress(pct)
+      if (elapsed < duration) {
+        requestAnimationFrame(step)
+      }
+    }
+    const raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [duration])
+
+  useEffect(() => {
+    if (progress >= 100) {
+      controls.start({ opacity: 0, scale: 0.98, transition: { duration: 0.6 } })
+    }
+  }, [progress, controls])
 
   return (
-    <div className="fixed inset-0 bg-primary-black flex items-center justify-center overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] opacity-50" />
-
-      {/* Particle field */}
-      <div className="absolute inset-0">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-primary-yellow rounded-full"
-            initial={{ x: `${particle.x}%`, y: `${particle.y}%`, opacity: 0 }}
-            animate={{
-              x: `${particle.x + (Math.random() - 0.5) * 50}%`,
-              y: `${particle.y + (Math.random() - 0.5) * 50}%`,
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 2.5,
-              ease: "easeOut",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Logo container with 3D rotation */}
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
-        >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2.5, ease: "easeInOut" }}
-            className="w-24 h-24 md:w-32 md:h-32"
-          >
-            <svg viewBox="0 0 200 200" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Logo simplified - gear */}
-              <circle cx="100" cy="100" r="95" stroke="#FDD835" strokeWidth="3" />
-              <circle cx="100" cy="100" r="85" fill="none" stroke="#FDD835" strokeWidth="2" />
-
-              {/* Truck silhouette */}
-              <g transform="translate(70, 80)">
-                <rect x="0" y="20" width="50" height="25" fill="#FDD835" rx="2" />
-                <rect x="45" y="10" width="15" height="15" fill="#FDD835" />
-                <circle cx="10" cy="50" r="6" fill="#FDD835" />
-                <circle cx="50" cy="50" r="6" fill="#FDD835" />
-              </g>
-            </svg>
-          </motion.div>
-        </motion.div>
-
-        {/* Pulsing glow effect */}
-        <motion.div
-          animate={{
-            boxShadow: [
-              "0 0 20px rgba(253, 216, 53, 0.5)",
-              "0 0 40px rgba(253, 216, 53, 1)",
-              "0 0 20px rgba(253, 216, 53, 0.5)",
-            ],
-          }}
-          transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
-          className="absolute inset-0 w-24 h-24 md:w-32 md:h-32"
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={controls}
+      className="fixed inset-0 bg-gradient-to-br from-[#050505] via-[#0b0b0b] to-[#050505] flex items-center justify-center z-50"
+      role="status"
+      aria-live="polite"
+    >
+      <div className="flex flex-col items-center gap-6 px-6">
+        <motion.img
+          src="https://cdn.builder.io/api/v1/image/assets%2F37fe508629794307b44d873859aad7cf%2F07ca97242bc2430e81a2d57a4fdb367c?format=webp&width=600"
+          alt="Quick Lift logo"
+          width={160}
+          height={160}
+          className="w-28 h-28 md:w-40 md:h-40 object-contain"
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 2.0, ease: "linear" }}
         />
 
-        {/* Text */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-8 text-center"
-        >
-          <h1 className="text-2xl md:text-3xl font-bold text-primary-yellow">QUICK LIFT</h1>
-          <p className="text-foreground/60 text-sm">Junk Removal & Hauling</p>
-        </motion.div>
+        <div className="w-64 md:w-96 h-3 bg-neutral-800 rounded-full overflow-hidden">
+          <motion.div
+            className="h-full bg-gradient-to-r from-primary-yellow to-accent-gold"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ ease: "linear", duration: 0.2 }}
+          />
+        </div>
+
+        <div className="text-center">
+          <p className="text-sm text-foreground/60">Loading Quick Lift… {progress}%</p>
+        </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
