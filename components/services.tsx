@@ -61,9 +61,9 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4 text-foreground">
-            Our{" "}
-            <span className="text-primary-yellow">
+          <h2 className="text-5xl md:text-6xl font-black mb-4">
+            <span className="text-foreground">Our</span>{" "}
+            <span className="bg-gradient-to-r from-primary-yellow to-accent-gold bg-clip-text text-transparent">
                 Services
               </span>
           </h2>
