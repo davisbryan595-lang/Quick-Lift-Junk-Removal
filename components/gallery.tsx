@@ -12,19 +12,19 @@ const galleryItems = [
     id: 1,
     title: "Residential Cleanout",
     before: true,
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+    src: "/service3.jpg",
   },
   {
     id: 2,
     title: "Basement Removal",
     before: false,
-    src: "https://images.unsplash.com/photo-1581091012184-7d39f4e7f8e1?auto=format&fit=crop&w=1400&q=80",
+    src: "/service1.jpg",
   },
   {
     id: 3,
     title: "Furniture Hauling",
     before: true,
-    src: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1400&q=80",
+    src: "/serr2.jpg",
   },
   {
     id: 4,
