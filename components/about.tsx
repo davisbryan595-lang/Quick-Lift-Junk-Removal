@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect, useState } from "react"  // ← FIXED
 import { Check } from "lucide-react"
 
 export default function About() {
@@ -34,7 +34,7 @@ export default function About() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content - UNCHANGED */}
+          {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -93,7 +93,7 @@ export default function About() {
   )
 }
 
-// Animated Counter for Right-Side Cards Only
+// Animated Counter Component
 function StatCard({ stat, inView, delay }: { stat: any; inView: boolean; delay: number }) {
   const [count, setCount] = useState(0)
 
@@ -102,8 +102,8 @@ function StatCard({ stat, inView, delay }: { stat: any; inView: boolean; delay: 
 
     let start = 0
     const end = stat.number
-    const duration = 1500 // 1.5 seconds
-    const increment = end / (duration / 16) // ~60fps
+    const duration = 1500
+    const increment = end / (duration / 16)
 
     const timer = setInterval(() => {
       start += increment
@@ -130,8 +130,7 @@ function StatCard({ stat, inView, delay }: { stat: any; inView: boolean; delay: 
         className="mb-3"
       >
         <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-yellow to-accent-gold">
-          {count}
-          {stat.suffix}
+          {count}{stat.suffix}
         </div>
       </motion.div>
       <p className="text-foreground/70 text-sm font-medium group-hover:text-primary-yellow transition-colors">
