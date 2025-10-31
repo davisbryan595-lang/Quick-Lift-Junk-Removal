@@ -3,6 +3,9 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useState } from "react"
+import dynamic from "next/dynamic"
+
+const BeforeAfterSlider = dynamic(() => import("./before-after-slider"), { ssr: false })
 
 const galleryItems = [
   {
