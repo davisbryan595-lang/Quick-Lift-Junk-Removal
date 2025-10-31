@@ -43,7 +43,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground">
               Why{" "}
               <span
-                className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-foreground/70"
+                className="bg-gradient-to-r from-primary-yellow via-accent-gold to-primary-yellow bg-clip-text text-accent-gold/70"
               >
                 Choose Us
               </span>
