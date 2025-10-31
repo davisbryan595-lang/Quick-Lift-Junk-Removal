@@ -176,7 +176,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-primary-yellow/5 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-primary-yellow/10 text-white placeholder-foreground/40 outline-none transition-all duration-300"
+                    className="w-full px-4 py-3 rounded-lg bg-white/80 border border-primary-yellow/30 focus:border-primary-yellow focus:bg-white text-foreground placeholder-foreground/50 outline-none transition-all duration-300"
                     placeholder="(240) 500-0946"
                   />
                 </motion.div>
