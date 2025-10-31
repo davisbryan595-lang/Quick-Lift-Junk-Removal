@@ -6,24 +6,18 @@ import Image from "next/image"
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden pt-20">
-      {/* Background: Local hero.mp4 + Fallback */}
+      {/* Background: Local hero.png */}
       <div className="absolute inset-0 z-0">
-        {/* Local Video Background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster="/hero-poster.jpg" // Optional: Add a high-res poster image in /public
-          aria-label="Quick Lift Junk Removal in action – fast, clean, professional"
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-       
+        {/* Hero Image */}
+        <Image
+          src="/hero.png"
+          alt="Quick Lift Junk Removal – Fast, Clean, Professional"
+          fill
+          className="object-cover"
+          priority
+          quality={95}
+          sizes="100vw"
+        />
 
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary-black/80 via-[#0a0a0a]/40 to-primary-black/90" />
