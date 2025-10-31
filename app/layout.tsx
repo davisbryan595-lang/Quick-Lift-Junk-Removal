@@ -1,12 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Archivo } from "next/font/google"
+import { Geist, Geist_Mono, Archivo, Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 import "../styles/globals.css"
 import "./globals.css"
 import BackgroundParticles from "@/components/background-particles"
 
+const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] })
 const _archivo = Archivo({ subsets: ["latin"], weight: ["400", "700", "900"] })
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -79,7 +80,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${poppins.className} font-sans antialiased`}>
         <Script id="jsonld-localbusiness" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify(jsonLd)}
         </Script>
